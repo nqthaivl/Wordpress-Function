@@ -1,0 +1,15 @@
+function custom_rewrite_thang() {
+    add_rewrite_rule(
+        '^lich-van-nien-thang-([^/]*)-nam-([^/]*)/?',
+        'index.php?pagename=lich-van-nien-thang&thang=$matches[1]&nam=$matches[2]',
+        'top'
+    );
+}
+add_action('init', 'custom_rewrite_thang', 10, 0);
+
+function custom_rewrite_tag() {
+    add_rewrite_tag('%ngay%', '([^&]+)');
+    add_rewrite_tag('%thang%', '([^&]+)');
+    add_rewrite_tag('%nam%', '([^&]+)');
+}
+add_action('init', 'custom_rewrite_tag', 10, 0);

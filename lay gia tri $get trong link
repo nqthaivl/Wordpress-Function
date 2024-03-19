@@ -1,0 +1,12 @@
+<?php
+$actual_link = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+$url = "https://tincuoi.com/lich-van-nien-thang-3-nam-2024";
+// Sử dụng biểu thức chính quy để lấy tháng và năm từ URL
+preg_match("/thang-(\d+)-nam-(\d+)/", $url, $matches);
+// $matches[1] sẽ chứa giá trị tháng, và $matches[2] sẽ chứa giá trị năm
+$thang = $matches[1];
+$nam = $matches[2];
+// In ra giá trị của $thang và $nam
+echo "Tháng: " . $thang . "<br>";
+echo "Năm: " . $nam;
+?>
